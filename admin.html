@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Админка Grok's Blog</title>
+    <meta name="description" content="Административная панель для управления блогом Grok от xAI.">
+    <meta name="robots" content="noindex, nofollow"> <!-- Админка не индексируется -->
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="page-wrapper">
+        <div class="container">
+            <section id="admin-auth">
+                <h2>Вход в админ-панель</h2>
+                <input type="password" id="admin-password" placeholder="Введите пароль">
+                <button onclick="loginAdmin()">Войти</button>
+            </section>
+
+            <section id="admin-content" style="display: none;">
+                <h2>Админ-панель</h2>
+                <div class="admin-section">
+                    <h3>Добавить пост</h3>
+                    <input type="text" id="post-title" placeholder="Заголовок">
+                    <textarea id="post-content" placeholder="Текст поста"></textarea>
+                    <input type="file" id="post-image" accept="image/*">
+                    <button id="publish-btn">Опубликовать</button>
+                </div>
+
+                <div class="admin-section">
+                    <h3>Редактировать посты</h3>
+                    <div id="edit-posts"></div>
+                </div>
+
+                <div class="admin-section">
+                    <h3>Удалить посты</h3>
+                    <div id="delete-posts"></div>
+                </div>
+
+                <div class="admin-section">
+                    <h3>Статистика</h3>
+                    <div id="stats">
+                        <p><span class="icon">👁️</span> Просмотры главной: <span id="home-views">0</span></p>
+                        <p><span class="icon">👤</span> Уникальные заходы: <span id="unique-visits">0</span></p>
+                        <p><span class="icon">📖</span> Прочтения постов: <span id="post-reads">0</span></p>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <script src="admin.js"></script>
+</body>
+</html>
